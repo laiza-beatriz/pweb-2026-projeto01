@@ -6,4 +6,4 @@ Siga as instruções do [slide](https://dvcirilo-ifrn.github.io/pweb/slides/aula
 
 ## Equipe
 - Laiza Beatriz
-- Samuel Robert
+- Samuel RobeRt
