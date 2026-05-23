@@ -9,36 +9,31 @@
 
     <div class="alunos">
 
+      
         <div class="aluno-card">
-            <img src="{% static 'img/laiza.png.jpeg' %}" alt="Laiza">
-
+            <img src="{% static 'img/laiza.png.jpeg' %}" alt="{{ alunos.0.nome }}">
             <div class="texto">
-                <h2>Laíza</h2>
-
-                <p>Técnica em infoweb</p>
-                <p>17 anos</p>
+                <h2>{{ alunos.0.nome }}</h2>
+                <p>{{ alunos.0.curso }}</p>
+                <p>{{ alunos.0.idade }}</p>
             </div>
         </div>
 
         <div class="aluno-card">
-            <img src="{% static 'img/samuel.png.jpeg' %}" alt="Samuel">
-
+            <img src="{% static 'img/samuel.png.jpeg' %}" alt="{{ alunos.1.nome }}">
             <div class="texto">
-                <h2>Samuel</h2>
-
-                <p>Técnica em infoweb</p>
-                <p>17 anos</p>
+                <h2>{{ alunos.1.nome }}</h2>
+                <p>{{ alunos.1.curso }}</p>
+                <p>{{ alunos.1.idade }}</p>
             </div>
         </div>
 
     </div>
 
+    </div>
+
     <div class="descricao">
-        <p>
-            Somos alunos do IFRNSPP cursando Informática para internet.
-            Escolhemos esse anime Haikyuu! para fazer o projeto da matéria
-            programação web, onde apresentamos a equipe Karasuno.
-        </p>
+        <p>{{ descricao }}</p>
     </div>
 
 </section>
