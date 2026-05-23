@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Sobre{% endblock %}
+
+{% block content %}
+
+<section class="sobre">
+
+    <div class="alunos">
+
+        <div class="aluno-card">
+            <img src="{% static 'img/laiza.png.jpeg' %}" alt="Laiza">
+
+            <div class="texto">
+                <h2>Laíza</h2>
+
+                <p>Técnica em infoweb</p>
+                <p>17 anos</p>
+            </div>
+        </div>
+
+        <div class="aluno-card">
+            <img src="{% static 'img/samuel.png.jpeg' %}" alt="Samuel">
+
+            <div class="texto">
+                <h2>Samuel</h2>
+
+                <p>Técnica em infoweb</p>
+                <p>17 anos</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="descricao">
+        <p>
+            Somos alunos do IFRNSPP cursando Informática para internet.
+            Escolhemos esse anime Haikyuu! para fazer o projeto da matéria
+            programação web, onde apresentamos a equipe Karasuno.
+        </p>
+    </div>
+
+</section>
+
+{% endblock %}

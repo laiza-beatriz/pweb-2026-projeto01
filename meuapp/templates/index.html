@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Haikyuu{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static 'img/logo.png.jpeg' %}" alt="Logo Haikyuu">
+            </div>
+
+            <ul class="menu">
+                <li><a href="{% url 'inicio' %}">Início</a></li>
+                <li><a href="{% url 'equipe' %}">Equipe</a></li>
+                <li><a href="{% url 'sobre' %}">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+<footer class="footer">
+    <p>
+        © 2026 Projeto Haikyuu 
+    </p>
+</footer>
+
+</body>
+</html>
