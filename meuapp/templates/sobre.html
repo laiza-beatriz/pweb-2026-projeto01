@@ -9,26 +9,23 @@
 
     <div class="alunos">
 
-      
+        {% for a in alunos %}
         <div class="aluno-card">
-            <img src="{% static 'img/laiza.png.jpeg' %}" alt="{{ alunos.0.nome }}">
+            {% if a.foto %}
+                <img src="{{ a.foto.url }}" alt="{{ a.nome }}">
+            {% else %}
+                <img src="{% static 'img/default.png' %}" alt="Sem foto">
+            {% endif %}
+            
             <div class="texto">
-                <h2>{{ alunos.0.nome }}</h2>
-                <p>{{ alunos.0.curso }}</p>
-                <p>{{ alunos.0.idade }}</p>
+                <h2>{{ a.nome }}</h2>
+                <p>{{ a.curso }}</p>
+                <p>{{ a.idade }}</p>
             </div>
         </div>
-
-        <div class="aluno-card">
-            <img src="{% static 'img/samuel.png.jpeg' %}" alt="{{ alunos.1.nome }}">
-            <div class="texto">
-                <h2>{{ alunos.1.nome }}</h2>
-                <p>{{ alunos.1.curso }}</p>
-                <p>{{ alunos.1.idade }}</p>
-            </div>
-        </div>
-
-    </div>
+        {% empty %}
+            <p>Nenhum aluno cadastrado no momento.</p>
+        {% endfor %}
 
     </div>
 

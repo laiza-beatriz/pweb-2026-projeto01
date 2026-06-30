@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Jogador, Aluno  
 
 def index(request):
     return render(request, 'index.html')
@@ -8,78 +8,15 @@ def inicio(request):
     return render(request, 'inicio.html')
 
 def equipe(request):
-    jogador = [
-        {
-            'nome': 'Hinata',
-            'posicao': 'Central',
-            'idade': '16 anos',
-        },
-
-        {
-            'nome': 'Kageyama',
-            'posicao': 'Levantador',
-            'idade': '16 anos',
-        },
-
-        {
-            'nome': 'Yamaguchi',
-            'posicao': 'Central',
-            'idade': '16 anos',
-        },
-
-        {
-            'nome': 'Daichi',
-            'posicao': 'Ponteiro',
-            'idade': '18 anos',
-        },
-
-        {
-            'nome': 'Nishinoya',
-            'posicao': 'Líbero',
-            'idade': '16 anos',
-        },
-
-        {
-            'nome': 'Tsukishima',
-            'posicao': 'Central',
-            'idade': '16 anos',
-        },
-
-        {
-            'nome': 'Asahi',
-            'posicao': 'Ponteiro',
-            'idade': '18 anos',
-        },
-
-        {
-            'nome': 'Tanaka',
-            'posicao': 'Ponteiro',
-            'idade': '18 anos',
-        },
-    ]
+    jogadores_db = Jogador.objects.all()
 
     context = {
-        'jogador': jogador
+        'jogador': jogadores_db  
     }
-
     return render(request, 'equipe.html', context)
 
-
 def sobre(request):
-
-    alunos = [
-        {
-            'nome': 'Laíza',
-            'curso': 'Técnica em infoweb',
-            'idade': '17 anos',
-        },
-
-        {
-            'nome': 'Samuel',
-            'curso': 'Técnico em infoweb',
-            'idade': '17 anos',
-        }
-    ]
+    alunos_db = Aluno.objects.all()
 
     descricao = """
     Somos alunos do IFRNSPP cursando Informática para internet.
@@ -88,8 +25,7 @@ def sobre(request):
     """
 
     context = {
-        'alunos': alunos,
+        'alunos': alunos_db,  
         'descricao': descricao
     }
-
     return render(request, 'sobre.html', context)
