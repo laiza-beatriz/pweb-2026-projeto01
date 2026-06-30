@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="{% static 'img/logo.png.jpeg' %}" alt="Logo Haikyuu">
+                <img src="{% static 'img/logo.png ' %}" alt="Logo Haikyuu">
             </div>
 
             <ul class="menu">
@@ -24,7 +23,7 @@
             </ul>
         </nav>
     </header>
-
+    
     {% block content %}
     {% endblock %}
 
@@ -33,6 +32,5 @@
         © 2026 Projeto Haikyuu 
     </p>
 </footer>
-
 </body>
 </html>
